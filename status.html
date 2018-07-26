@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="stylesheet4.css"/>
+<title>Status</title>
+</head>
+<body>
+<center><h2>Thank You for ordering with us</h2>
+<p>We feel grateful for giving an opppurtunity</p>
+<p>Click the button to get your product coordinates.</p>
+<button onclick="getLocation()">Click Here</button><br><br>
+<form>
+<input type="submit" name="LOG OUT" formaction="/main.html">
+</form>
+</center>
+<p id="demo"></p>
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+</html>
